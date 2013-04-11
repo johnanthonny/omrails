@@ -1,12 +1,16 @@
-<div class="hero-unit">
-	<h1>Welcome to Ameyzing!</h1>
-	<p>
-		You've found the home page for the 
-		<%= link_to "Christina's Life With Damien", "http://www.everytrail.com/best/hiking-los-angeles-california" %>
-		application.
-	</p>
-	<p>
-		<%= link_to "ENTER A LIFE OF LOVE WITH ME!", "#", class: "btn btn-primary btn-large" %>
-	</p>
-</div>
+<% if user_signed_in? %>
+	<h1>You're logged in!</h1>
+<% else %>
+	<div class="hero-unit">
+		<h1>Welcome to Ameyzing!</h1>
+		<p>
+			You've found the home page for the 
+			<%= link_to "Ameyzing Lifestyles", "http://www.everytrail.com/best/hiking-los-angeles-california" %>
+			application.
+		</p>
+		<p>
+			<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div>
+<% end %>
 

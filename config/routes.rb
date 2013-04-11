@@ -1,9 +1,13 @@
 Omrails::Application.routes.draw do
+  devise_for :users
+
+  devise_for :installs
+
   get 'about'=> 'pages#about'
 
   root :to => 'pages#home'
 
-  # The priority is based upon order of creation:
+    # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
